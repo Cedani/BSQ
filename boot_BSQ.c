@@ -15,7 +15,7 @@
 int fs_open_file(char const *filepath)
 {
     int fd = open(filepath, O_RDONLY);
-    
+
     return (fd);
 }
 

@@ -20,7 +20,7 @@ int main(int argc, char **argv)
         exit (84);
     }
     i = error(argv[1]);
-    if (i != 2) {
+    if (i == -1) {
         write(2, "error", 6);
         exit (84);
     }

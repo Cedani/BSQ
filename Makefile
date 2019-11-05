@@ -10,8 +10,9 @@ SRC		=		my_putstr.c		\
 				boot_BSQ.c		\
 				my_getnbr.c		\
 				my_put_nbr.c	\
-				BSQ_main.c		\
-				BSQ_error.c
+				BSQ_error.c		\
+				BSQ_main.c
+
 
 OBJ		=		$(SRC:.c=.o)
 
@@ -24,7 +25,6 @@ clean:
 		rm -rf *.o
 
 fclean: clean
-		rm -rf *.o
 		rm $(NAME)
 
 re: 	fclean all

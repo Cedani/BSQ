@@ -15,6 +15,14 @@
 int error(char const *filepath)
 {
     int fd = fs_open_file(filepath);
-    if (fd == -1)
-        return (-1);
+    if (fd == -1) {
+        write(2, "error", 6);
+        exit (84);
+    }
+    return (0);
 }
+
+/*int fs_get_number_from_first_line(char const *filepath)
+{
+    if ()
+}*/
