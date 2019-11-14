@@ -55,15 +55,19 @@ void fs_cat_x_bytes(char const *filepath, int x)
     close(fd);
 }
 
-void fs_print_first_line(char const *filepath)
+char *fs_print_first_line(int fd)
 {
-    int fd = open(filepath, O_RDONLY);
+    //int fd = open(filepath, O_RDONLY);
     int i = 0;
     char test;
+    char *result = malloc(sizeof(*result));
 
     while (test != '\n') {
         read(fd, &test, 1);
-        if (test != '\n')
-            my_putchar(test);
+        if (test != '\n') {
+            result[i] = test;
+            i++;
+        }
     }
+    return (result);
 }

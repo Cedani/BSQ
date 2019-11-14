@@ -19,10 +19,19 @@ int error(char const *filepath)
         write(2, "error", 6);
         exit (84);
     }
+
+    //if ()
     return (0);
 }
 
-/*int fs_get_number_from_first_line(char const *filepath)
+int fs_get_number_from_first_line(char const *filepath)
 {
-    if ()
-}*/
+    int fd = fs_open_file(filepath);
+    char *str = fs_print_first_line(fd);
+    int nb_line = my_getnbr(str);
+    if (nb_line <= 0) {
+        write(2, "error", 6);
+        exit (84);
+    }
+    printf("%d\n", nb_line);
+}

@@ -24,4 +24,6 @@ int main(int argc, char **argv)
         write(2, "error", 6);
         exit (84);
     }
+    fs_get_number_from_first_line(argv[1]);
+    return (0);
 }

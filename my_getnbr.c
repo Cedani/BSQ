@@ -1,12 +1,6 @@
-/*
-** EPITECH PROJECT, 2019
-** CPool_infinadd
-** File description:
-** my_getnbr.c
-*/
 #include <unistd.h>
-int attrib_sign(char const *str, int i);
-int attrib_num(char const *str, int i);
+#include <stdio.h>
+#include "my.h"
 int my_getnbr(char const *str)
 {
     int i = 0;
@@ -22,9 +16,6 @@ int my_getnbr(char const *str)
         }
         i++;
     }
-    if ((ret > 2147483646) || (ret < -2147483646) || (signal == 0)) {
-        return (0);
-    }
     if (sign == 1) {
         return -ret;
     } else {
@@ -37,7 +28,7 @@ int attrib_sign(char const *str, int i)
     int plus = 0;
     int minus = 0;
     int k = i - 1;
-    while (str[k] == '-' || str[k] == '+') {
+    while (k >= 0) {
         if (str[k] == '-') {
             minus++;
         } else {
