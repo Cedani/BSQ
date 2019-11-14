@@ -33,5 +33,4 @@ int fs_get_number_from_first_line(char const *filepath)
         write(2, "error", 6);
         exit (84);
     }
-    printf("%d\n", nb_line);
 }
