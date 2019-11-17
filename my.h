@@ -10,6 +10,9 @@
 #define  _BSQ_
 
 void my_putchar(char c);
+int error_strtol(char *str, int i);
+int count_space(char *str);
+int find_num(int i, char *str);
 int my_putstr(char const *str);
 int my_getnbr(char const *str);
 int my_put_nbr(int nb);
@@ -26,6 +29,8 @@ int error(char const *filepath);
 int attrib_sign(char const *str, int i);
 int attrib_num(char const *str, int i);
 int fs_get_number_from_first_line(char const *filepath);
-
+int my_strtol(char *str, char **ptr);
+char *attrib_string(char *str, char **ptr, int i);
+int my_strlen(char const *str);
 
 #endif
