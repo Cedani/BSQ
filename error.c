@@ -29,7 +29,7 @@ char **recup_map(char const *filepath)
     int fd = open(filepath, O_RDONLY);
 }
 
-int fs_get_number_from_first_line(char const *filepath)
+char *fs_get_number_from_first_line(char const *filepath, int *nb_line)
 {
     struct stat *stat1;
     int j = 0;
@@ -38,17 +38,26 @@ int fs_get_number_from_first_line(char const *filepath)
     stat(filepath, stat1);
     char *str = malloc(sizeof(char) * stat1->st_size);
     read(fd, str, stat1->st_size);
-    int nb_line = my_strtol(str, &str);
-    if (nb_line <= 0) {
+    *nb_line = my_strtol(str, &str);
+    if (*nb_line <= 0) {
         write(2, "error", 6);
         exit (84);
     }
     str += 1;
     j = my_strlen(str) + 1;
-    if (j % nb_line != 0) {
+    int k = count_good_size(str);
+    if (j % *nb_line != 0 || k != *nb_line - 1) {
         write(2, "error", 6);
         exit (84);
     }
-    return (nb_line);
+    return (str);
 }
 
+int count_good_size(char *str)
+{
+    int j = 0;
+    for (int i = 0; str[i]; i += 1)
+        if (str[i] == '\n')
+            j += 1;
+    return (j);
+}

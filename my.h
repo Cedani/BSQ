@@ -28,9 +28,10 @@ void fs_cat_x_bytes(char const *filepath, int x);
 int error(char const *filepath);
 int attrib_sign(char const *str, int i);
 int attrib_num(char const *str, int i);
-int fs_get_number_from_first_line(char const *filepath);
+char *fs_get_number_from_first_line(char const *filepath, int *nb_line);
 int my_strtol(char *str, char **ptr);
 char *attrib_string(char *str, char **ptr, int i);
 int my_strlen(char const *str);
-
+int count_good_size(char *str);
+char **my_str_to_word_array(char *str);
 #endif

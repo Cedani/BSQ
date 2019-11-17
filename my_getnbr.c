@@ -1,6 +1,14 @@
+/*
+** EPITECH PROJECT, 2019
+** my_getnbr
+** File description:
+** get number in string
+*/
+
 #include <unistd.h>
 #include <stdio.h>
 #include "my.h"
+
 int my_getnbr(char const *str)
 {
     int i = 0;

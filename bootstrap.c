@@ -57,7 +57,6 @@ void fs_cat_x_bytes(char const *filepath, int x)
 
 char *fs_print_first_line(int fd)
 {
-    //int fd = open(filepath, O_RDONLY);
     int i = 0;
     char test;
     char *result = malloc(sizeof(*result));
