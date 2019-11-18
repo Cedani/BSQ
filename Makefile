@@ -5,29 +5,38 @@
 ## makefile
 ##
 
-SRC		=		my_putstr.c		\
-				my_putchar.c	\
-				bootstrap.c		\
-				my_getnbr.c		\
-				my_put_nbr.c	\
-				error.c			\
-				main.c			\
-				my_strtol.c		\
-				my_strlen.c		\
-				my_str_to_word_array.c
+SRC		=		./lib/my/error.c	\
+				./lib/my/find_square.c 	\
+				./lib/my/my_getnbr.c 	\
+				./lib/my/my_put_nbr.c 		\
+				./lib/my/my_putchar.c 	\
+				./lib/my/my_putstr.c 	\
+				./lib/my/my_str_to_word_array.c \
+				./lib/my/my_strlen.c 	\
+				./lib/my/my_strtol.c
+
+MAIN	= 		main.c			\
 
 
 OBJ		=		$(SRC:.c=.o)
 
 NAME	=		bsq
 
-all:		$(OBJ)
-		gcc -Wall -Wextra -Werror $(OBJ) -o $(NAME)
+LIBMY	=		libmy.a
 
+all:		$(OBJ)
+		ar rc $(LIBMY) $(OBJ)
+
+move:
+		mv ./lib/my/$(LIBMY) ./
+
+run_main:
+		 gcc -Wall -Wextra -Werror -o $(NAME) $(MAIN) $(LIBMY)
 clean:
-		rm -rf *.o
+		rm -rf ./lib/my/*.o
 
 fclean: clean
 		rm -f $(NAME)
+		rm -f $(LIBMY)
 
 re: 	fclean all

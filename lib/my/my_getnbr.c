@@ -5,9 +5,7 @@
 ** get number in string
 */
 
-#include <unistd.h>
-#include <stdio.h>
-#include "my.h"
+#include "../../include/my.h"
 
 int my_getnbr(char const *str)
 {

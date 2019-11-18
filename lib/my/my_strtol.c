@@ -5,9 +5,7 @@
 ** my_strtol
 */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include "my.h"
+#include "../../include/my.h"
 
 int my_strtol(char *str, char **ptr)
 {

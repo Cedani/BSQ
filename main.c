@@ -4,13 +4,8 @@
 ** File description:
 ** main function of BSQ
 */
-#include "my.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include "my.h"
+
+#include "./include/my.h"
 
 int main(int argc, char **argv)
 {
@@ -28,5 +23,9 @@ int main(int argc, char **argv)
     char *str = fs_get_number_from_first_line(argv[1], &nb_line);
     char **tab;
     tab = my_str_to_word_array(str);
+    for (int i = 0; tab[i]; i += 1) {
+        my_putstr(tab[i]);
+        my_putchar('\n');
+    }
     return (0);
 }

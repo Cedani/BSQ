@@ -5,10 +5,7 @@
 ** transform a  string into an array of string
 */
 
-#include <stddef.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "my.h"
+#include "../../include/my.h"
 
 int jump_nonalpha(char str);
 
