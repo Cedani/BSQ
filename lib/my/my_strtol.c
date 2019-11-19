@@ -64,8 +64,8 @@ char *attrib_string(char *str, char **ptr, int i)
     ptr[0] = malloc(sizeof(char) * (my_strlen(str) - i) + 1);
     while (str[i] != '\0') {
         ptr[0][j] = str[i];
-        i++;
-        j++;
+        i += 1;
+        j += 1;
     }
     ptr[0][j] = '\0';
     return (ptr[0]);

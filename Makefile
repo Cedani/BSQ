@@ -13,7 +13,8 @@ SRC		=		./lib/my/error.c	\
 				./lib/my/my_putstr.c 	\
 				./lib/my/my_str_to_word_array.c \
 				./lib/my/my_strlen.c 	\
-				./lib/my/my_strtol.c
+				./lib/my/my_strtol.c	\
+				./lib/my/my_sort_int_array.c 	\
 
 MAIN	= 		main.c			\
 

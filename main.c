@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     int nb_line = 0;
     char *str = fs_get_number_from_first_line(argv[1], &nb_line);
     char **tab;
-    tab = my_str_to_word_array(str);
+    tab = my_str_to_word_array(str, nb_line);
     finding_square(tab);
     free(tab);
     return (0);

@@ -32,13 +32,12 @@ char *fs_get_number_from_first_line(char const *filepath, int *nb_line)
     read(fd, str, stat1.st_size);
     *nb_line = my_strtol(str, &str);
     if (*nb_line <= 0) {
-        write(2, "error", 6);
         exit (84);
     }
     str += 1;
-    if ((my_strlen(str) + 1) % *nb_line != 0
+    fd = (my_strlen(str) + 1);
+    if (fd % *nb_line != 0
         || count_good_size(str) != *nb_line - 1) {
-        write(2, "error", 6);
         exit (84);
     }
     return (str);
@@ -51,4 +50,16 @@ int count_good_size(char *str)
         if (str[i] == '\n')
             j += 1;
     return (j);
+}
+
+void repacking(char **tab)
+{
+    for (int y = 0; tab[y]; y += 1) {
+        for (int x = 0; tab[y][x]; x += 1) {
+            if (tab[y][x] == '0')
+                tab[y][x] = 'o';
+            else if (tab[y][x] != 'x')
+                tab[y][x] = '.';
+        }
+    }
 }

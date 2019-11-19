@@ -33,6 +33,10 @@ int my_strtol(char *str, char **ptr);
 char *attrib_string(char *str, char **ptr, int i);
 int my_strlen(char const *str);
 int count_good_size(char *str);
-char **my_str_to_word_array(char *str);
-
+char **my_str_to_word_array(char *str, int nb_lines);
+void cond(int *tab, int j);
+void my_sort_int_array(int * tab , int size);
+void adding(char **tab, int i, int j);
+void creating_square(char **tab);
+void repacking(char **tab);
 #endif
