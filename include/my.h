@@ -39,4 +39,5 @@ void my_sort_int_array(int * tab , int size);
 void adding(char **tab, int i, int j);
 void creating_square(char **tab);
 void repacking(char **tab);
+
 #endif

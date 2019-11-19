@@ -50,9 +50,8 @@ int my_len(char *str, int i)
 {
     int j = 0;
     int k = i;
-    int m = my_strlen(str);
 
-    while (k <= m - 1 && jump_nonalpha(str[k]) == 0) {
+    while (jump_nonalpha(str[k]) == 0) {
         j++;
         k++;
     }
@@ -62,9 +61,8 @@ int my_len(char *str, int i)
 char *convert(char const *src, char *dest, int *i)
 {
     int j = 0;
-    int m = my_strlen(src);
 
-    while (*i <= m - 1 && jump_nonalpha(src[*i]) == 0) {
+    while (jump_nonalpha(src[*i]) == 0) {
         dest[j] = src[*i];
         *i += 1;
         j += 1;
