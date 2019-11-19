@@ -28,7 +28,7 @@ char **my_str_to_word_array(char *str)
     while (k < my_strlen(str)) {
         if (jump_nonalpha(str[k]) == 0) {
             size = my_len(str, k);
-            tab[i] = malloc((sizeof(char)) * (size + 1));
+            tab[i] = malloc((sizeof(char)) * (size) + 1);
             tab[i] = convert(str, tab[i], &k);
             i++;
         }

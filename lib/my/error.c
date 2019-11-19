@@ -10,6 +10,7 @@
 int error(char const *filepath)
 {
     int fd = open(filepath, O_RDONLY);
+    char s;
 
     if (fd == -1) {
         write(2, "error", 6);
@@ -24,10 +25,10 @@ char *fs_get_number_from_first_line(char const *filepath, int *nb_line)
     struct stat stat1;
     int fd = open(filepath, O_RDONLY);
     char *str;
-    int k;
 
     stat(filepath, &stat1);
-    str = malloc(sizeof(char) * stat1.st_size);
+    str = malloc(sizeof(char) * stat1.st_size + 1);
+    str[stat1.st_size] = '\0';
     read(fd, str, stat1.st_size);
     *nb_line = my_strtol(str, &str);
     if (*nb_line <= 0) {
@@ -35,8 +36,8 @@ char *fs_get_number_from_first_line(char const *filepath, int *nb_line)
         exit (84);
     }
     str += 1;
-    k = count_good_size(str);
-    if ((my_strlen(str) + 1) % *nb_line != 0 || k != *nb_line - 1) {
+    if ((my_strlen(str) + 1) % *nb_line != 0
+        || count_good_size(str) != *nb_line - 1) {
         write(2, "error", 6);
         exit (84);
     }

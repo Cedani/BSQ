@@ -26,12 +26,8 @@ LIBMY	=		libmy.a
 
 all:		$(OBJ)
 		ar rc $(LIBMY) $(OBJ)
+		gcc -Wall -Wextra -o $(NAME) $(MAIN) $(LIBMY) \
 
-move:
-		mv ./lib/my/$(LIBMY) ./
-
-run_main:
-		 gcc -Wall -Wextra -Werror -o $(NAME) $(MAIN) $(LIBMY)
 clean:
 		rm -rf ./lib/my/*.o
 
