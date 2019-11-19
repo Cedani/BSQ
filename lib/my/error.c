@@ -36,8 +36,8 @@ char *fs_get_number_from_first_line(char const *filepath, int *nb_line)
     }
     str += 1;
     fd = (my_strlen(str) + 1);
-    if (fd % *nb_line != 0
-        || count_good_size(str) != *nb_line - 1) {
+    if (fd % *nb_line > 1
+        || count_good_size(str) != *nb_line) {
         exit (84);
     }
     return (str);

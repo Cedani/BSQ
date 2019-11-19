@@ -42,11 +42,8 @@ int jump_nonalpha(char str)
         return (1);
     } else if (str == '.' || str == 'o'){
         return (0);
-    }
-    else {
-        write(2, "error", 6);
-        exit(84);
-    }
+    } else
+        exit (84);
 }
 
 int my_len(char *str, int i)
