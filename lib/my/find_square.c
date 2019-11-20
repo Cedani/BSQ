@@ -10,8 +10,7 @@
 void finding_square(char **tab)
 {
     int x = 0;
-    int y = 0;
-    fill_numb(tab);
+    x = fill_numb(tab);
 
     for (int i = 1; tab[i]; i += 1) {
         for (int j = 1; tab[i][j]; j += 1) {
@@ -23,7 +22,7 @@ void finding_square(char **tab)
     creating_square(tab);
     repacking(tab);
     for (int i = 0; tab[i]; i += 1) {
-        my_putstr(tab[i]);
+        write(1, tab[i], x);
         my_putchar('\n');
     }
 }
@@ -38,7 +37,7 @@ int compare(char **tab, int i, int j)
     return comp[0];
 }
 
-void fill_numb(char **tab)
+int fill_numb(char **tab)
 {
     int i = 0;
     int j = 0;
@@ -57,6 +56,7 @@ void fill_numb(char **tab)
         for (int m = 0; tab[k][m]; m += 1)
             if (tab[k][m] == 'o')
                 tab[k][m] = '0';
+    return (j);
 }
 
 void adding(char **tab, int i, int j)

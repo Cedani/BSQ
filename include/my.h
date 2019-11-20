@@ -17,7 +17,7 @@
 #include <stddef.h>
 
 void my_putchar(char c);
-void fill_numb(char **tab);
+int fill_numb(char **tab);
 void finding_square(char **tab);
 int error_strtol(char *str, int i);
 int count_space(char *str);
