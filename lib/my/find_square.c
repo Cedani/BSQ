@@ -72,12 +72,12 @@ void adding(char **tab, int i, int j)
 
 void creating_square(char **tab)
 {
-    int i;
-    int j;
+    int i = 0;
+    int j = 0;
     int biggest = 0;
-    for (int y = 0; tab[y]; y += 1) {
+    for (int y = 0; tab[y] != NULL; y += 1) {
         for (int x = 0; tab[y][x]; x += 1) {
-            int comp = tab[y][x] - 48;
+            int comp = (unsigned char)tab[y][x] - 48;
             if (comp > biggest) {
                 i = x;
                 j = y;
@@ -85,6 +85,8 @@ void creating_square(char **tab)
             }
         }
     }
+    if (i == biggest - 1)
+        j = i;
     for (int y = j; y > j - biggest; y += -1) {
         for (int x = i; x > i - biggest; x += -1) {
             tab[y][x] = 'x';

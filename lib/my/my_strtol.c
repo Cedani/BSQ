@@ -15,7 +15,7 @@ int my_strtol(char *str, char **ptr)
     int k = 0;
 
     if (error_strtol(str, i) == 0)
-        return 0;
+        exit(84);
     m = find_num(i, str);
     test = malloc(sizeof(char) * m + 1);
     while (k < m) {
