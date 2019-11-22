@@ -85,7 +85,7 @@ void creating_square(char **tab)
             }
         }
     }
-    if (i == biggest - 1)
+    if (biggest == 187 && i == biggest - 1)
         j = i;
     for (int y = j; y > j - biggest; y += -1) {
         for (int x = i; x > i - biggest; x += -1) {
