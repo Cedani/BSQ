@@ -19,10 +19,6 @@ MAIN	= 		main.c			\
 
 OBJ		=		$(SRC:.c=.o)
 
-TEST	=		./lib/my/test.c 	\
-
-UNIT	= 		unit_tests			\
-
 NAME	=		bsq
 
 LIBMY	=		libmy.a
@@ -31,19 +27,11 @@ all:		$(OBJ)
 		ar rc $(LIBMY) $(OBJ)
 		gcc -Wall -Wextra -o $(NAME) $(MAIN) $(LIBMY) \
 
-run_test:
-		gcc -lcriterion --coverage $(TEST) $(SRC) -o $(UNIT)
-
 clean:
 		rm -rf ./lib/my/*.o
-		rm -rf ./lib/my/*.gcda
-		rm -rf ./lib/my/*.gcno
-		rm -rf *.gcno
-		rm -rf *.gcda
 
 fclean: clean
 		rm -f $(NAME)
 		rm -f $(LIBMY)
-		rm -f $(UNIT)
 
 re: 	fclean all
