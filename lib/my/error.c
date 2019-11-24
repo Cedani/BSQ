@@ -13,7 +13,6 @@ int error(char const *filepath)
     char s;
 
     if (fd == -1) {
-        write(2, "error", 6);
         exit (84);
     }
     close (fd);
